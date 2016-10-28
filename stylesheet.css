@@ -13,6 +13,7 @@ table {
   border-spacing: 0.5rem;
   border: 1px solid black;
   margin-left: 10%;
+  background-color: gainsboro;
 }
 
 td {
@@ -20,12 +21,32 @@ td {
   border: 1px solid black;
 }
 
+@keyframes good {
+  from {background-color: gold;}
+  to {background-color: green;}
+}
+
+@keyframes bad {
+  from {background-color: red;}
+  to {background-color: black;}
+}
+
 tr.goodBonus:hover {
-  background-color: green;
-  color: gold;
+  background-color: gold;
+  color: green;
+  animation-name: good;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 }
 
 tr.badBonus:hover {
   background-color: red;
   color: black;
+  animation-name: bad;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 }
