@@ -18,6 +18,10 @@ table {
   text-align: center;
 }
 
+th {
+  text-align: center;
+}
+
 td {
   padding-left: 25px;
   border: 1px solid black;
@@ -26,11 +30,15 @@ td {
 @keyframes good {
   from {background-color: gold;}
   to {background-color: green;}
+  from {color: green;}
+  to {color: gold;}
 }
 
 @keyframes bad {
   from {background-color: red;}
   to {background-color: black;}
+  from {color: black;}
+  to {color: red;}
 }
 
 tr.goodBonus:hover {
@@ -52,3 +60,15 @@ tr.badBonus:hover {
   animation-direction: alternate;
   animation-timing-function: linear;
 }
+/*
+tr.goodBonus:hover.sprite-money-sign-sprite {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -45px;
+}
+
+tr.badBonus:hover.sprite-monopoly-man {
+    width: 128px;
+    height: 128px;
+    background-position: -143px -5px;
+}*/
