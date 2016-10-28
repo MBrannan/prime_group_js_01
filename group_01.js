@@ -15,12 +15,21 @@ var mayella = new Person("Mayella", "89068", "35000", 2);
 
 var employees = [atticus, jem, boo, scout, robert, mayella];
 
+var localeOpts = {
+  style: 'currency',
+  currency: 'USD',
+};
+
+var percentOpts = {
+  style: 'percent'
+};
+
 for (var i = 0; i < employees.length; i++) {
   calcBonus(employees[i]);
 }
 
 employees.forEach(function(employee) {
-  console.log(employee.firstName, employee.bonusPercent, employee.totalComp, employee.bonusAmount);
+  console.log(employee.firstName, employee.bonusPercent.toLocaleString('en-US', percentOpts), employee.totalComp.toLocaleString('en-US', localeOpts), employee.bonusAmount.toLocaleString('en-US', localeOpts));
 });
 
 function calcBonus(employee) {
@@ -72,13 +81,13 @@ employees.forEach(function(employee) {
   bonusTable += "<tr " + badBonus + "><td>" + employee.firstName +
       "</td>" +
       "<td>" +
-        employee.bonusPercent +
+        employee.bonusPercent.toLocaleString('en-US', percentOpts) +
       "</td>" +
       "<td>" +
-        employee.totalComp +
+        employee.totalComp.toLocaleString('en-US', localeOpts) +
       "</td>" +
       "<td>" +
-        employee.bonusAmount
+        employee.bonusAmount.toLocaleString('en-US', localeOpts)
       "</td>" +
     "</tr>"
 });
